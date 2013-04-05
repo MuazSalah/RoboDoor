@@ -15,6 +15,7 @@ lab to only those who have "Authorised" cards. It utilizes ID-20 RFID reader mod
 (I got mine from sparkfun), and the compares the RFID tag to a list of tags inside
 it. Buzzer and LED gives an AudioVisual feedback, and a solenoid (also from 
 Sparkfun) opens the door latch.
+
 ------------------------------------------------------------------------------------
 
 ### 2. Functionality of the controller
@@ -65,25 +66,25 @@ appropriately
 	
 ##### ISR(USART_RX_vect)
 
-	Receives the USART characters and adds them to a buffer
+Receives the USART characters and adds them to a buffer
 
 ##### void init_sys(void)
 	
-	Initilization function
+Initilization function
 	
 ##### uint8_t MatchTagID(char * Tag1, char * Tag2)
 
-	Compares to strings, the first is the received tag and the other is a tag from a table
+Compares to strings, the first is the received tag and the other is a tag from a table
 	
 ##### uint8_t MatchToTable (char * Tag)
 	
-	Sends the received tag as well as a tag from a table to the MatchTagID function
-	to compare them
+Sends the received tag as well as a tag from a table to the MatchTagID function
+to compare them
 	
 ##### void AcceptTag(void)
 
-	As it says :) it turns on an LED and opens the door
+As it says :) it turns on an LED and opens the door
 
 ##### void RejectTag(void)
 
-	as it says, ;) BEEB BEEB BEEB
+as it says, ;) BEEB BEEB BEEB
